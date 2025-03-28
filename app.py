@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/ocr', methods=['POST'])
 def ocr():
     if 'file' not in request.files:
-        return jsonify({'error': ' 'No file part'}), 400
+        return jsonify({'error': 'No file part'}), 400
 
     lang = request.form.get('lang', 'ces')  # default: Czech
     file = request.files['file']
